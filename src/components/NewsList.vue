@@ -1,6 +1,5 @@
 <template>
   <section>
-    <!-- <pre>{{newsList}}</pre> -->
     <ul class="news-list">
       <li class="news-card" v-for="newsItem in newsList" :key="newsItem.id">
         <p><span class="heading">Title</span>: {{ newsItem.title }}</p>
@@ -48,11 +47,13 @@ ul.news-list {
   gap: 3rem;
 }
 
-ul.li.news-card {
+ul li.news-card {
   padding: 10px;
   display: flex;
+  border-radius: 8px;
   flex-direction: column;
   row-gap: 5px;
+  box-shadow: 0px 4px 12px -1px rgba(120,116,120,0.79);
 }
 
 li p span.heading {
