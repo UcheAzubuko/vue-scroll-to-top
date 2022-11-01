@@ -1,5 +1,5 @@
 <template>
-  <button ref="appButton" class="app-button">
+  <button @click="scrollToTop" ref="appButton" class="app-button">
     <font-awesome-icon icon="fa-solid fa-arrow-up" />
   </button>
 </template>
@@ -16,10 +16,10 @@ export default {
     const userScroll = () => {
       if (window.scrollY > 0) {
         appButton.value.classList.add("showButton");
-        console.log('scrolled');
+        console.log("scrolled");
       } else {
         appButton.value.classList.remove("showButton");
-        console.log('top');
+        console.log("top");
       }
     };
 
@@ -31,7 +31,11 @@ export default {
       window.removeEventListener("scroll", userScroll);
     });
 
-    return { appButton };
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    return { appButton, scrollToTop };
   },
 };
 </script>
